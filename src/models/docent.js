@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Campus = require('./campus');
 
 const DocentSchema = new mongoose.Schema({
-    voornaam: { type: string },
-    achternaam: { type: string },
+    voornaam: { type: String },
+    achternaam: { type: String },
     campussen: [{ type: mongoose.Schema.Types.ObjectId, ref: Campus }],
 }, {
     collection: 'docent'
