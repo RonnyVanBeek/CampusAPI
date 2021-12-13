@@ -57,4 +57,15 @@ router.delete('/campus/delete/:id', async(req, res) => {
     }
 });
 
+/*Return docenten*/
+router.get('/docent', async(req, res) => {
+    console.log('/docent route called');
+    try {
+        res.json(await Docent.find().populate('campussen').sort('voornaam'));
+    } catch (e) {
+        console.log(e);
+        res.sendStatus(500);
+    }
+});
+
 module.exports = router;
