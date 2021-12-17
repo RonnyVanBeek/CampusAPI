@@ -5,7 +5,13 @@ const Docent = require('./models/docent');
 
 router.get('/', (req, res) => {
     console.log('/ route called');
-    res.send('<h1>Welcome to the API, these are the available routes:</h1>');
+    res.send('<h1>Welcome to the API, these are the available routes:</h1><br/>' +
+        '<h2>/campus</h2><br/><p>Returns a list of all campuses</p><br/><br/>' +
+        '<h2>/campus/id</h2><br/><p>Returns a specific campus</p><br/><br/>' +
+        '<h2>/campus/create</h2><br/><p>Creates a new campus</p><br/><br/>' +
+        '<h2>/campus/update/id</h2><br/><p>Updates a specific campus with new data</p><br/><br/>' +
+        '<h2>/campus/delete/id</h2><br/><p>Deletes a specific campus</p><br/><br/>' +
+        '<h2>/docent</h2><br/><p>Returns a list of all "docenten" ordered by firstname</p>');
 })
 
 router.get('/campus', async(req, res) => {
